@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>UrbanWheelsBikes</title>
+</head>
+
+<body>
+    <header>
+        <!-- Aquí irá el navbar con el logo o nombre en el margen izquierdo -->
+        <!-- Encontrar la forma de poner el buscador aquí el margen derecho -->
+    </header>
+
+    <main>
+        <p>Tu proximo vehiculo</p>
+        <!-- Productos -->
+        <input type="text" id="inputBuscar" value="" placeholder="Búsqueda de productos"/>
+        <div id="productos">
+            <!-- Aquí van los productos de la base de datos -->
+        </div>
+        
+        <!-- Aca van las 3 categorias de productos tipo carrusel, una categoria debo de la otra...  -->
+        <div id="monopatines">
+            <!-- Aquí van los productos "monopatines" de la base de datos -->
+        </div>
+        <div id="motovehiculos">
+            <!-- Aquí van los productos "motovehiculos" de la base de datos -->
+        </div>
+        <div id="otros">
+            <!-- Aquí van los productos "otros vehiculos" de la base de datos -->
+        </div>
+
+        <!-- Carrito -->
+        <section class="ocultar">
+            <h1>
+                <span id="cantidadProductos">0</span>
+            </h1>
+            <div id="carrito">
+                <!-- Aqúi van a cargarse los productos del carrito -->
+            </div>
+            <h3>Total: $<span id="totalCarrito">0</span></h3>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

@@ -4,31 +4,15 @@
 class BaseDeDatos {
     constructor() {
         this.productos = [];
-        // Aquí van todos los productos que tengamos
-        this.agregarRegistro(1, "motovehiculo", "HIGH SPEED LMJR VESPA 3000W", 2030000, "vespa.png");
-        this.agregarRegistro(2, "motovehiculo", "LEO 2000W", 746200, "leo.png");
-        this.agregarRegistro(3, "motovehiculo", "HAWK 3000W", 1117000, "hawk.png");
-        this.agregarRegistro(4, "motovehiculo", "MIKU SUPER 3000W", 2132200, "miku.png");
-        this.agregarRegistro(5, "monopatin", "X5 ECO 350W", 224000, "x5.png");
-        this.agregarRegistro(6, "monopatin", "X9 PLUS 500W", 476000, "x9.png");
-        this.agregarRegistro(7, "monopatin", "VELOCIFERO HB 1600W", 616000, "velocifero.png");
-        this.agregarRegistro(8, "monopatin", "SPY RACING 1500W", 756000, "spy.png");
-        this.agregarRegistro(9, "cuatriciclo", "ELECTRIC ATV 1500", 8682000, "atv.png");
-        this.agregarRegistro(10, "bicicleta", "BICICLETA RAY-HS", 837200, "rayHs.png");
-        this.agregarRegistro(11, "triciclo", "ABSOLUTE GT 500W", 798000, "absoluteGT.png");
-        this.agregarRegistro(12, "utilitario", "KING KONG 1500W", 2273600, "kingKong.png");
-
-    }
-
-    // Método que crea el objeto producto y lo almacena en el array con un push
-    agregarRegistro(id, tipo, modelo, precio, imagen) {
-        const producto = new Producto(id, tipo, modelo, precio, imagen);
-        this.productos.push(producto);
+        
     }
     // Nos retorna el array con los productos
-    traerRegistros() {
+    async traerRegistros() {
+        const response = await fetch("../json/productos.json")
+        this.productos = await response.json();
         return this.productos;
     }
+
     // Busca un producto por id, si lo encuentralo retorna en forma de objeto
     registroPorId(id) {
         return this.productos.find((producto) => producto.id === id);
@@ -37,6 +21,11 @@ class BaseDeDatos {
     registrosPorTipo(palabra) {
         return this.productos.filter((producto) => producto.tipo.toLowerCase().includes(palabra));
     }
+
+    registrosPorPestanas(pestanas) {
+        return this.productos.filter((producto) => producto.pestanas.toLowerCase() === pestanas.toLowerCase());
+    }
+
 }
 
 // Carrito de compras
@@ -73,7 +62,7 @@ class Carrito {
         const indice = this.carrito.findIndex((producto) => producto.id === id);
         // si la cantidad del producto es + a 1, le resto
         if (this.carrito[indice].cantidad > 1) {
-            this.carrito[indice].contidad--;
+            this.carrito[indice].cantidad--;
         } else {
             // sino, significa que hay 1 solo producto, asi quye lo borro
             this.carrito.splice(indice, 1);
@@ -119,8 +108,9 @@ class Carrito {
 
 // Clase molde para los productos
 class Producto {
-    constructor(id, tipo, modelo, precio, imagen = false) {
+    constructor(id, pestanas, tipo, modelo, precio, imagen = false) {
         this.id = id;
+        this.pestanas = pestanas;
         this.tipo = tipo;
         this.modelo = modelo;
         this.precio = precio;
@@ -137,20 +127,45 @@ const divCarrito = document.querySelector("#carrito");
 const spanCantidadProductos = document.querySelector("#cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
 const inputBuscar = document.querySelector("#inputBuscar");
-const botonCarrito = document.querySelector("section h3");
+const botonCarrito = document.querySelector("section h1");
+const botonComprar = document.querySelector("#botonComprar");
+const botonesPestanas = document.querySelectorAll(".btnPestanas")
+
+// Botones para filtrar productos por tipo en las pestañas
+botonesPestanas.forEach((boton) => {
+    boton.addEventListener("click", (event) => {
+        event.preventDefault();
+        quitarClase();
+        boton.classList.add("active");
+        const productosPorPestanas = bd.registrosPorPestanas(boton.innerText);
+        cargarProductos(productosPorPestanas);
+    });
+});
+
+const botonTodos = document.querySelector("#btnTodos");
+botonTodos.addEventListener("click", (event) => {
+    event.preventDefault();
+    quitarClase();
+    botonTodos.classList.add("seleccionado");
+    cargarProductos(bd.productos);
+});
+
+function quitarClase() {
+    const botonesPestanas = document.querySelectorAll(".btnPestanas");
+    botonesPestanas.forEach((boton) => {
+        boton.classList.remove("active");
+    });
+}
 
 
 // Llamamos a la función
-cargarProductos(bd.traerRegistros());
+bd.traerRegistros().then((productos) => cargarProductos(productos));
+
 
 // Muestra registros de la base de datos en el HTML
 function cargarProductos(productos) {
     divProductos.innerHTML = "";
-    // Recorremos todos los productos y lo agregamos al div #productos
     for (const producto of productos) {
-        // A cada div lo agregamos un botón de Agregar al carrito, y a ese botón le pasamos
-        // el atributo data-id, con el id del producto. Eso después nos va a ser muy útil
-        // para saber desde que producto estamos haciendo click
         divProductos.innerHTML += `
           <div class="producto">
               <h2>${producto.tipo}</h2>

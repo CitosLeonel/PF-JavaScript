@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "HIGH SPEED VESPA 3000W",
+        "precio": 2030000,
+        "imagen": "vespa.png"
+    },
+        {
+        "id": 2,
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "LEO 2000W",
+        "precio": 746200,
+        "imagen": "leo.png"
+    },
+        {
+        "id": 3,
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "HAWK 3000W",
+        "precio": 1117000,
+        "imagen": "hawk.png"
+    },
+        {
+        "id": 4,
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "MIKU SUPER 3000W",
+        "precio": 2132200,
+        "imagen": "miku.png"
+    },
+        {
+        "id": 5,
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "X5 ECO 350W",
+        "precio": 224000,
+        "imagen": "x5.png"
+    },
+        {
+        "id": 6,
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "X9 PLUS 500W",
+        "precio": 476000,
+        "imagen": "x9.png"
+    },
+        {
+        "id": 7,
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "VELOCIFERO HB 1600W",
+        "precio": 616000,
+        "imagen": "velocifero.png"
+    },
+        {
+        "id": 8,
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "SPY RACING 1500W",
+        "precio": 756000,
+        "imagen": "spy.png"
+    },
+        {
+        "id": 9,
+        "pestanas": "otros",
+        "tipo": "cuatriciclo",
+        "modelo": "ELECTRIC ATV 1500",
+        "precio": 8682000,
+        "imagen": "atv.png"
+    },
+        {
+        "id": 10,
+        "pestanas": "otros",
+        "tipo": "bicicleta",
+        "modelo": "BICICLETA RAY-HS",
+        "precio": 837200,
+        "imagen": "rayHs.png"
+    },
+        {
+        "id": 11,
+        "pestanas": "otros",
+        "tipo": "triciclo",
+        "modelo": "ABSOLUTE GT 500W",
+        "precio": 798000,
+        "imagen": "absoluteGT.png"
+    },
+        {
+        "id": 12,
+        "pestanas": "otros",
+        "tipo": "utilitario",
+        "modelo": "KING KONG 1500W",
+        "precio": 2273600,
+        "imagen": "KingKong.png"
+    }
+]

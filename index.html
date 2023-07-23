@@ -17,42 +17,61 @@
 </head>
 
 <body>
-    <header>
-        <!-- Aquí irá el navbar con el logo o nombre en el margen izquierdo -->
-        <!-- Encontrar la forma de poner el buscador aquí el margen derecho -->
+    <div>
+        <!-- Agregar algun modal que diga "cargando, espere" o similar -->
+    </div>
+    <header class="header sticky-top">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo/logo.png" alt="logo navbar" width="100" height="100">
+                </a>
+                <form class="d-flex mx-auto w-50" role="search">
+                    <input id="inputBuscar" value="" class="form-control me-2" type="search"
+                        placeholder="Buscar productos..." aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <!-- Carrito -->
+                <section class="ocultar ml-auto">
+                    <h1>
+                        <span id="cantidadProductos">0</span>
+                    </h1>
+                    <div id="carrito">
+                        <!-- Aqúi van a cargarse los productos del carrito -->
+                    </div>
+                    <h3>Total: $<span id="totalCarrito">0</span></h3>
+                    <a href="#" id="botonComprar" class="btn btnComprar oculto">Comprar</a>
+                </section>
+            </div>
+            <!-- Pestañas -->
+            <div class="container-fluid d-flex justify-content-center">
+                <ul class="nav nav-tabs" id="pestanas">
+                    <li class="nav-item">
+                        <a class="nav-link active btnPestanas" id="btnTodos">Todos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btnPestanas">Motos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btnPestanas">Monopatines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btnPestanas">Otros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <p>Tu proximo vehiculo</p>
+        <!-- Libreria sweet alert -->
+
         <!-- Productos -->
-        <input type="text" id="inputBuscar" value="" placeholder="Búsqueda de productos" />
         <div id="productos">
             <!-- Aquí van los productos de la base de datos -->
         </div>
 
-        <!-- Aca van las 3 categorias de productos tipo carrusel, una categoria debo de la otra...  -->
-        <div id="monopatines">
-            <!-- Aquí van los productos "monopatines" de la base de datos -->
-        </div>
-        <div id="motovehiculos">
-            <!-- Aquí van los productos "motovehiculos" de la base de datos -->
-        </div>
-        <div id="otros">
-            <!-- Aquí van los productos "otros vehiculos" de la base de datos -->
-        </div>
-
-        <!-- Carrito -->
-        <section class="ocultar">
-            <h1>
-                <span id="cantidadProductos">0</span>
-            </h1>
-            <div id="carrito">
-                <!-- Aqúi van a cargarse los productos del carrito -->
-            </div>
-            <h3>Total: $<span id="totalCarrito">0</span></h3>
-        </section>
     </main>
-
     <!-- inicio footer -->
     <footer class="footer">
         <div class="container">
@@ -69,7 +88,6 @@
             </div>
         </div>
     </footer>
-
     <!-- fin footer -->
 
     <script src="./js/app.js"></script>

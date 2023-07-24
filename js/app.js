@@ -4,7 +4,7 @@
 class BaseDeDatos {
     constructor() {
         this.productos = [];
-        
+
     }
     // Nos retorna el array con los productos
     async traerRegistros() {
@@ -84,12 +84,19 @@ class Carrito {
                     <h2>${producto.modelo}</h2>
                     <p>$${producto.precio}</p>
                     <p>Cantidad: ${producto.cantidad}</p>
-                    <a href="#" data-id="${producto.id}" class="btn.Quitar">Quitar del carrito</a>
+                    <a href="#" data-id="${producto.id}" class=".btnQuitar">Quitar del carrito</a>
                 </div>
             `;
             // Actualizamos totales:
             this.total += producto.precio * producto.cantidad;
             this.totalProductos += producto.cantidad;
+        }
+        
+        // Oculto el botón Comprar si no hay productos
+        if (this.totalProductos > 0) {
+            botonComprar.classList.remove("oculto"); 
+        } else {
+            botonComprar.classList.add("oculto"); 
         }
 
         // Botones "quitar"
@@ -205,7 +212,7 @@ inputBuscar.addEventListener("keyup", (event) => {
 
 // Toggle para el carrito
 botonCarrito.addEventListener("click", (event) => {
-    document.querySelector("section").classList.toggle("mostrar");
+    document.querySelector("section").classList.toggle("ocultar");
 });
 
 // Objeto carrito || Siempre ultimo para asegurarnos 

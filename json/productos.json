@@ -3,96 +3,96 @@
         "id": 1,
         "pestanas": "motos",
         "tipo": "motovehiculo",
-        "modelo": "HIGH SPEED VESPA 3000W",
-        "precio": 2030000,
+        "modelo": "SPEED VESPA 3000W",
+        "precio": "2.030.000,00",
         "imagen": "vespa.png"
     },
         {
         "id": 2,
-        "pestanas": "motos",
-        "tipo": "motovehiculo",
-        "modelo": "LEO 2000W",
-        "precio": 746200,
-        "imagen": "leo.png"
-    },
-        {
-        "id": 3,
-        "pestanas": "motos",
-        "tipo": "motovehiculo",
-        "modelo": "HAWK 3000W",
-        "precio": 1117000,
-        "imagen": "hawk.png"
-    },
-        {
-        "id": 4,
-        "pestanas": "motos",
-        "tipo": "motovehiculo",
-        "modelo": "MIKU SUPER 3000W",
-        "precio": 2132200,
-        "imagen": "miku.png"
-    },
-        {
-        "id": 5,
         "pestanas": "monopatines",
         "tipo": "monopatin",
         "modelo": "X5 ECO 350W",
-        "precio": 224000,
+        "precio": "224.000,00",
         "imagen": "x5.png"
     },
         {
+        "id": 3,
+        "pestanas": "otros",
+        "tipo": "cuatriciclo",
+        "modelo": "ELECTRIC ATV 1500",
+        "precio": "8.682.000,00",
+        "imagen": "atv.png"
+    },
+        {
+        "id": 4,
+        "pestanas": "otros",
+        "tipo": "bicicleta",
+        "modelo": "BICICLETA RAY-HS",
+        "precio": "837.200,00",
+        "imagen": "rayHs.png"
+    },
+        {
+        "id": 5,
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "LEO 2000W",
+        "precio": "746.200,00",
+        "imagen": "leo.png"
+    },
+        {
         "id": 6,
-        "pestanas": "monopatines",
-        "tipo": "monopatin",
-        "modelo": "X9 PLUS 500W",
-        "precio": 476000,
-        "imagen": "x9.png"
+        "pestanas": "otros",
+        "tipo": "utilitario",
+        "modelo": "KING KONG 1500W",
+        "precio": "2.273.600,00",
+        "imagen": "KingKong.png"
     },
         {
         "id": 7,
         "pestanas": "monopatines",
         "tipo": "monopatin",
         "modelo": "VELOCIFERO HB 1600W",
-        "precio": 616000,
+        "precio": "616.000,00",
         "imagen": "velocifero.png"
     },
         {
         "id": 8,
-        "pestanas": "monopatines",
-        "tipo": "monopatin",
-        "modelo": "SPY RACING 1500W",
-        "precio": 756000,
-        "imagen": "spy.png"
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "HAWK 3000W",
+        "precio": "1.117.000,00",
+        "imagen": "hawk.png"
     },
         {
         "id": 9,
-        "pestanas": "otros",
-        "tipo": "cuatriciclo",
-        "modelo": "ELECTRIC ATV 1500",
-        "precio": 8682000,
-        "imagen": "atv.png"
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "SPY RACING 1500W",
+        "precio": "756.000,00",
+        "imagen": "spy.png"
     },
         {
         "id": 10,
-        "pestanas": "otros",
-        "tipo": "bicicleta",
-        "modelo": "BICICLETA RAY-HS",
-        "precio": 837200,
-        "imagen": "rayHs.png"
+        "pestanas": "motos",
+        "tipo": "motovehiculo",
+        "modelo": "MIKU SUPER 3000W",
+        "precio": "2.132.200,00",
+        "imagen": "miku.png"
     },
         {
         "id": 11,
         "pestanas": "otros",
         "tipo": "triciclo",
         "modelo": "ABSOLUTE GT 500W",
-        "precio": 798000,
+        "precio": "798.000,00",
         "imagen": "absoluteGT.png"
     },
         {
         "id": 12,
-        "pestanas": "otros",
-        "tipo": "utilitario",
-        "modelo": "KING KONG 1500W",
-        "precio": 2273600,
-        "imagen": "KingKong.png"
+        "pestanas": "monopatines",
+        "tipo": "monopatin",
+        "modelo": "X9 PLUS 500W",
+        "precio": "476.000,00",
+        "imagen": "x9.png"
     }
 ]

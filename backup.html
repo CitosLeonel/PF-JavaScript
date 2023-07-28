@@ -10,9 +10,6 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Toastify -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- estilo principal -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -21,7 +18,7 @@
 
 <body>
     <div>
-        <!-- pop up mensaje "Cargando sitio...Espere por favor." || se hace con bootstrap -->
+        <!-- Agregar algun modal que diga "cargando, espere" o similar -->
     </div>
     <header class="header sticky-top">
         <nav class="navbar navbar-light bg-light">
@@ -29,25 +26,26 @@
                 <a class="navbar-brand" href="#">
                     <img src="./images/logo/logo.png" alt="logo navbar" width="100" height="100">
                 </a>
-                <!-- buscador -->
                 <form class="d-flex mx-auto w-50" role="search">
                     <input id="inputBuscar" value="" class="form-control me-2" type="search"
                         placeholder="Buscar productos..." aria-label="Buscar">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
-                <!-- carrito -->
+
+                <!-- Carrito -->
                 <section class="ocultar ml-auto">
                     <h1>
                         <span id="cantidadProductos">0</span>
                     </h1>
                     <div id="carrito">
-                        <!-- aqúi van a cargarse los productos del carrito -->
+                        <!-- Aqúi van a cargarse los productos del carrito -->
                     </div>
                     <h3>Total: $<span id="totalCarrito">0</span></h3>
-                    <a href="#" id="botonComprar" class="btn btnComprar oculto">COMPRAR</a>
+                    <a href="#" id="botonComprar" class="btn btnComprar oculto">Comprar</a>
                 </section>
             </div>
-            <!-- pestañas -->
+            
+            <!-- Pestañas -->
             <div class="container-fluid d-flex justify-content-center">
                 <ul class="nav nav-tabs" id="pestanas">
                     <li class="nav-item">
@@ -68,11 +66,14 @@
     </header>
 
     <main>
+        <!-- Libreria sweet alert -->
+
+        <!-- Productos -->
         <div id="productos">
             <!-- Aquí van los productos de la base de datos -->
         </div>
-    </main>
 
+    </main>
     <!-- inicio footer -->
     <footer class="footer">
         <div class="container">
@@ -91,11 +92,6 @@
     </footer>
     <!-- fin footer -->
 
-    <!-- librería Sweet Alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Toastify -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <!-- javascript -->
     <script src="./js/app.js"></script>
 </body>
 

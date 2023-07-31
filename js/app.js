@@ -67,7 +67,7 @@ botonTodos.addEventListener("click", (event) => {
 });
 
 function quitarClase() {
-    const botonesPestanas = document.querySelectorAll(".btnPestanas");
+    const botonesPestanas = document.querySelectorAll("btnPestanas");
     botonesPestanas.forEach((boton) => {
         boton.classList.remove("active");
     });
@@ -94,7 +94,7 @@ function cargarProductos(productos) {
     }
 
     // botones "agregar al carrito"
-    const botonesAgregar = document.querySelectorAll(".btnAgregar");
+    const botonesAgregar = document.querySelectorAll("btnAgregar");
     for (const boton of botonesAgregar) {
         boton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -133,7 +133,8 @@ class Carrito {
             position: "left", // `left`, `center` or `right`
             stopOnFocus: true,
             style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                background: "#72c453",
+                color: "#010101"
             },
         }).showToast();
     }
@@ -154,7 +155,7 @@ class Carrito {
                     <h5>${producto.modelo}</h5>
                     <p>$${producto.precio}</p>
                     <p>Cantidad: ${producto.cantidad}</p>
-                    <a href="#" data-id="${producto.id}" class=".btnQuitar">Quitar del carrito</a>
+                    <a href="#" data-id="${producto.id}" class="btnQuitar">Quitar del carrito</a>
                 </div>
             `;
             // actualizamos los totales
@@ -180,7 +181,7 @@ class Carrito {
         spanCantidadProductos.innerText = this.totalProductos;
         spanTotalCarrito.innerText = this.total;
     }
-    // méto para quitar prodoctos del carrito
+    // método para quitar prodoctos del carrito
     quitar(id) {
         const indice = this.carrito.findIndex((producto) => producto.id === id);
         if (this.carrito[indice].cantidad > 1) {
@@ -211,7 +212,7 @@ inputBuscar.addEventListener("keyup", (event) => {
 });
 
 // Toggle para mostrar/ocultar carrito
-botonCarrito.addEventListener("click", (event) => {
+botonCarrito.addEventListener("click", () => {
     document.querySelector("section").classList.toggle("ocultar");
 });
 

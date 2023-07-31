@@ -1,89 +1,96 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: #eee0e0;
-  }
+body {
+  background-color: #eee0e0;
+}
 
-  main {
-    width: 80%;
-    margin: auto;
-    padding: 20px 0 0 0;
-  }
+main {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0 0 0;
+}
 
-/* HEADER */ 
+/* HEADER */
 /* pestañas */
 .nav-tabs .nav-link.active {
-    background-color: #f0f0f0; /* Color de fondo cuando la pestaña está activa */
-  }
-  
-  .nav-tabs .nav-link:hover {
-    background-color: #f5f5f5; /* Color de fondo cuando el cursor pasa por encima */
-    cursor: pointer; 
-  }
-  
-  .nav-tabs .nav-link {
-    margin-right: 10px; 
-    color: #0a0a0a; 
-    font-size: 16px; 
-    font-weight: bold; 
-    text-decoration: none;
-    list-style: none; 
-  }
-  
-  .nav-tabs .nav-item {
-    border-radius: 5px; 
-  }
+  background-color: #f0f0f0;
+  /* Color de fondo cuando la pestaña está activa */
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #f5f5f5;
+  /* Color de fondo cuando el cursor pasa por encima */
+  cursor: pointer;
+}
+
+.nav-tabs .nav-link {
+  margin-right: 10px;
+  color: #0a0a0a;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav-tabs .nav-item {
+  border-radius: 5px;
+}
 
 /* cards de prodcutos */
 #productos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    height: auto;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: auto;
+}
+
+.producto {
+  border: 1px solid rgba(1, 1, 1, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.producto .precio {
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 4px 10px;
+  color: #010101;
+}
+
+.producto .imagen {
+  display: flex;
+  justify-content: center;
+  min-height: 160px;
+  margin: 20px 0;
+}
+
+.producto .imagen img {
+  max-height: 150px;
+}
+
+.producto .btnAgregar {
+  text-decoration: none;
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+
+.producto:hover {
+  border: 1px solid #010101;
+  box-shadow: 0px 0px 14px 0px rgba(1, 1, 1, 0.2);
+}
+
+/* carrito */
+section {
   
-  .producto {
-    border: 1px solid rgba(1, 1, 1, 0.4);
-    border-radius: 10px;
-    padding: 10px;
-  }
-  
-  .producto .precio {
-    padding: 10px 0;
-    font-size: 15px;
-    font-weight: bold;
-    display: inline-block;
-    padding: 4px 10px;
-    color: #010101;
-  }
-  
-  .producto .imagen {
-    display: flex;
-    justify-content: center;
-    min-height: 160px;
-    margin: 20px 0;
-  }
-  
-  .producto .imagen img {
-    max-height: 150px;
-  }
-  
-  .producto .btnAgregar {
-    text-decoration: none;
-    margin: auto;
-    display: block;
-    text-align: center;
-  }
-  
-  .producto:hover {
-    border: 1px solid #010101;
-    box-shadow: 0px 0px 14px 0px rgba(1, 1, 1, 0.2);
-  }
+} 
 
 
 /* botones */
@@ -102,46 +109,40 @@
 
 .btnAgregar:hover,
 .btnQuitar:hover {
-  border: 1px solid #010101 ;
+  border: 1px solid #010101;
   color: #010101;
 }
 
-
-
-
-
-
-
-  /* footer */
+/* footer */
 .footer {
-    background-color: #ffffff;
-    color: #0a0a0a;
-    font-size: 12px;
-    padding: 10px;
-    margin: 20px;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
-  
-  .footer .logo {
-    text-align: left;    
-    max-width: 25%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .footer .address {
-    text-align: center;
-    }
-  
-  .footer .rights {
-    text-align: right;
-  }
-  
-  .footer .row {
-    display: flex;
-    align-items: center;
-  }
+  background-color: #ffffff;
+  color: #0a0a0a;
+  font-size: 12px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer .logo {
+  text-align: left;
+  max-width: 25%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer .address {
+  text-align: center;
+}
+
+.footer .rights {
+  text-align: right;
+}
+
+.footer .row {
+  display: flex;
+  align-items: center;
+}

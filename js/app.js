@@ -151,7 +151,7 @@ class Carrito {
         for (const prodcuto of this.carrito) {
             divCarrito.innerHTML += `
                 <div class="productoCarrito">
-                    <h2>${producto.modelo}</h2>
+                    <h5>${producto.modelo}</h5>
                     <p>$${producto.precio}</p>
                     <p>Cantidad: ${producto.cantidad}</p>
                     <a href="#" data-id="${producto.id}" class=".btnQuitar">Quitar del carrito</a>

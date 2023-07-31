@@ -148,7 +148,7 @@ class Carrito {
         this.total = 0;
         this.totalProductos = 0;
         divCarrito.innerHTML = "";
-        for (const prodcuto of this.carrito) {
+        for (const producto of this.carrito) {
             divCarrito.innerHTML += `
                 <div class="productoCarrito">
                     <h5>${producto.modelo}</h5>
@@ -169,7 +169,7 @@ class Carrito {
             botonComprar.classList.add("oculto");
         }
         // botones de quitar
-        const botonesQuitar = document.querySelectorAll(".btnQuitar");
+        const botonesQuitar = document.querySelectorAll("btnQuitar");
         for (const boton of botonesQuitar) {
             boton.onclick = (event) => {
                 event.preventDefault();

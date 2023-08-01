@@ -142,7 +142,8 @@ class Carrito {
             stopOnFocus: true,
             style: {
                 background: "#72c453",
-                color: "#010101"
+                color: "#010101",
+                borderRadius: "10px",
             },
         }).showToast();
     }

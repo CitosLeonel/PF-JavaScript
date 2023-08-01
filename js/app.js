@@ -43,9 +43,17 @@ const divCarrito = document.querySelector("#carrito");
 const spanCantidadProductos = document.querySelector("#cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
 const inputBuscar = document.querySelector("#inputBuscar");
-const botonCarrito = document.querySelector("section h1"); //cambiar nombre 
+const botonCarrito = document.querySelector("section h2"); 
 const botonComprar = document.querySelector("#botonComprar");
 const botonesPestanas = document.querySelectorAll(".btnPestanas");
+
+
+
+// Agregar el evento click al botón del carrito
+botonCarrito.addEventListener("click", () => {
+    document.querySelector("section").classList.toggle("ocultar");
+});
+
 
 // botones para filtrar productos por tipo en las pestañas
 botonesPestanas.forEach((boton) => {
@@ -94,7 +102,7 @@ function cargarProductos(productos) {
     }
 
     // botones "agregar al carrito"
-    const botonesAgregar = document.querySelectorAll("btnAgregar");
+    const botonesAgregar = document.querySelectorAll(".btnAgregar");
     for (const boton of botonesAgregar) {
         boton.addEventListener("click", (event) => {
             event.preventDefault();
@@ -129,8 +137,8 @@ class Carrito {
         Toastify({
             text: "Éste producto fue agregado al carrito",
             duration: 3000,
-            gravity: "top", // `top` or `bottom`
-            position: "left", // `left`, `center` or `right`
+            gravity: "bottom", 
+            position: "center", 
             stopOnFocus: true,
             style: {
                 background: "#72c453",
@@ -170,7 +178,7 @@ class Carrito {
             botonComprar.classList.add("oculto");
         }
         // botones de quitar
-        const botonesQuitar = document.querySelectorAll("btnQuitar");
+        const botonesQuitar = document.querySelectorAll(".btnQuitar");
         for (const boton of botonesQuitar) {
             boton.onclick = (event) => {
                 event.preventDefault();
@@ -211,13 +219,33 @@ inputBuscar.addEventListener("keyup", (event) => {
     cargarProductos(productos);
 });
 
-// Toggle para mostrar/ocultar carrito
-botonCarrito.addEventListener("click", () => {
-    document.querySelector("section").classList.toggle("ocultar");
-});
 
-// Aqui veremos que hacemos con sweet alert
 
+// Evento click del botón "Comprar"
+botonComprar.addEventListener("click", () => {
+    // Aquí colocamos el código del SweetAlert
+    Swal.fire({
+      title: '¿Finalizar compra?',
+      text: '¡Puedes seguir agregando productos!',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'Seguir comprando',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '¡Pedido confirmado!',
+          text: '¡Muchas gracias por su compra!',
+          icon: 'success'
+        });
+        carrito.vaciar();
+      }
+    });
+  });
+  
+  
 
 // Objeto carrito || Siempre ultimo para asegurarnos 
 // que TODO este declarado e inicializado

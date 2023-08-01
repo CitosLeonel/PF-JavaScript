@@ -89,11 +89,80 @@ main {
 
 /* carrito */
 section {
-  
-} 
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateX(100%); 
+  padding: 8px;
+  transition: all 0.3s;
+  background-color: #f0f0f0;
+}
+#scroll {
+  overflow-y: auto;
+}
+section h2 {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 360px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  background: url(../images/cart.png) center center no-repeat #0000cc;
+
+}
+section h2 span {
+  display: block;
+  background-color: #df0900;
+  border-radius: 150px;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+  margin: -10px 0 0 30px;
+}
+section h3 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.productoCarrito {
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+.productoCarrito h2 {
+  margin-bottom: 8px;
+}
+.ocultar {
+  transform: translateX(0); 
+}
+.oculto {
+  right: 340px; 
+  transform: translateX(100%); 
+}
 
 
 /* botones */
+.btnComprar {
+  margin-top: 30px;
+  padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  color: #010101;
+  background-color: #72c453;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 14px 0px rgba(1, 1, 1, 0.2);
+}
+
 .btnAgregar,
 .btnQuitar {
   color: #010101;
